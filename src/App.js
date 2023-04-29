@@ -8,23 +8,23 @@ class App extends Component {
     super();
 
     this.state = {
-      name: "Rado",
+      monster1: {
+        name: "Linda",
+      },
+      monster2: {
+        name: "Frank",
+      },
+      monster3: {
+        name: "Jacky",
+      },
     };
   }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>My name is {this.state.name}</p>
-          <button
-            onClick={() => {
-              this.setState({ name: "Radoslav" });
-            }}
-          >
-            Change name
-          </button>
-        </header>
+        <h1>{this.state.monster1.name}</h1>
+        <h1>{this.state.monster2.name}</h1>
+        <h1>{this.state.monster3.name}</h1>
       </div>
     );
   }
