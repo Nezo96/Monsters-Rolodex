@@ -1,3 +1,5 @@
+import "./card.styles.css";
+
 const Card = ({ id, name, email }) => {
   return (
     <div className="card-container">
