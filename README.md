@@ -1,6 +1,15 @@
 # Monsters Rolodex
 
-Simple project which fetch users from api and than can filter users by name
+Simple project which fetch users from api and than can filter users by name.
+
+## Class version
+
+Branches->Class-based
+You have to first write any letter to search filed and than delete id.
+
+## Function version
+
+Branches->Main
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
