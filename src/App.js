@@ -2,29 +2,62 @@ import { Component } from "react";
 
 import logo from "./logo.svg";
 import "./App.css";
+import CardList from "./components/card-list/card-list.component";
 
 class App extends Component {
   constructor() {
+    console.log("Constructor");
     super();
 
     this.state = {
-      name: "Rado",
+      monsters: [],
+      searchString: "",
     };
   }
+
+  // Lifecycle method
+  componentDidMount() {
+    console.log("Component Mount");
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) =>
+        this.setState(
+          () => {
+            return { monsters: users };
+          },
+          () => {
+            console.log(this.state);
+          }
+        )
+      );
+  }
+
+  onSearchChange = (event) => {
+    const searchField = event.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  };
+
   render() {
+    console.log("Render");
+
+    const { monsters, searchField } = this.state;
+    const { onSearchChange } = this;
+
+    const filteredMonsters = monsters.filter((monster) => {
+      return monster.name.toLocaleLowerCase().includes(searchField);
+    });
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>My name is {this.state.name}</p>
-          <button
-            onClick={() => {
-              this.setState({ name: "Radoslav" });
-            }}
-          >
-            Change name
-          </button>
-        </header>
+        <input
+          className="search-box"
+          type="text"
+          placeholder="search monsters"
+          onChange={onSearchChange}
+        />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
