@@ -2,7 +2,15 @@ import { Component } from "react";
 
 class CardList extends Component {
   render() {
-    return <div>hello i am cardlist component</div>;
+    const { monsters } = this.props;
+    console.log(this.props.monsters);
+    return (
+      <div>
+        {monsters.map((monster) => (
+          <h1 key={monster.id}>{monster.name}</h1>
+        ))}
+      </div>
+    );
   }
 }
 
