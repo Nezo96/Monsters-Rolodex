@@ -6,7 +6,7 @@ Simple project which fetch users from api and than can filter users by name.
 
 Branches->Class-based
 
-You have to first write any letter to search filed and than delete id.
+You have to first write any letter to search files and then delete it.
 
 ## Function version
 
