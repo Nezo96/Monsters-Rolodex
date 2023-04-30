@@ -4,13 +4,13 @@ Simple project which fetch users from api and than can filter users by name.
 
 ## Class version
 
-Branches->Class-based
+Branches -> Class-based
 
 You have to first write any letter to search files and then delete it.
 
 ## Function version
 
-Branches->Main
+Branches -> Main
 
 ## Available Scripts
 
